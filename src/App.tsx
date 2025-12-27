@@ -1,30 +1,38 @@
 import { Header } from "./Components/Header/Header";
+import { Hero } from "./Components/Hero/Hero";
+import { Services } from "./Components/Card/Services";
+import { About } from "./Components/About/About";
+import { Contact } from "./Components/Contact/Contact";
+import { Footer } from "./Components/Footer/Footer";
+import { MessageCircle } from "lucide-react"; // Ícone para o botão flutuante
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    // Fundo azul escuro para combinar com o header e evitar linhas brancas
+    <div className="min-h-screen bg-[#020617] flex flex-col">
       <Header />
 
-      {/* Espaço para o conteúdo não ficar escondido atrás do Header fixo */}
-      <main className="pt-20">
-        <section
-          id="inicio"
-          className="h-screen flex items-center justify-center bg-gray-200"
-        >
-          <h1 className="text-4xl text-brand-dark font-bold">
-            Banner Principal (Hero)
-          </h1>
-        </section>
-
-        <section
-          id="servicos"
-          className="h-screen flex items-center justify-center bg-white"
-        >
-          <h2 className="text-3xl text-brand-blue font-bold">
-            Nossos Serviços
-          </h2>
-        </section>
+      {/* padding-top de 32 (128px) para compensar o header */}
+      <main className="flex-grow pt-32 bg-gray-50">
+        <Hero />
+        <Services />
+        <About />
+        <Contact />
       </main>
+
+      <Footer />
+
+      <a
+        href="https://wa.me/5518999999999"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all hover:scale-110 z-50 flex items-center gap-2 group"
+      >
+        <MessageCircle size={28} />
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
+          Fale Conosco
+        </span>
+      </a>
     </div>
   );
 }

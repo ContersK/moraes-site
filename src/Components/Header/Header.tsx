@@ -3,10 +3,8 @@ import { Menu, X, Phone } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Lista de links para facilitar a manutenção
   const navLinks = [
     { name: "Início", href: "#inicio" },
     { name: "Serviços", href: "#servicos" },
@@ -14,74 +12,76 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-brand-dark border-b border-gray-800 shadow-lg">
+    /* Fundo azul escuro e elegante (#020617) */
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#020617] shadow-2xl transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="shrink-0 flex items-center gap-2">
-            {/* Ajuste o h-12 conforme necessário para o tamanho do logo */}
+        {/* Altura de 128px (h-32) - Tamanho grande e imponente */}
+        <div className="flex items-center justify-between h-32">
+          {/* Logo Container */}
+          <div className="flex-shrink-0 flex items-center h-full py-4">
             <img
-              src="/img/Moraes_Logo.jpg"
+              // ATENÇÃO: Usando o arquivo .png agora
+              src="/img/moraes_logo_trans2.png"
               alt="Moraes Climatização"
-              className="h-14 w-auto object-contain rounded-md"
+              // Sem máscaras, apenas ajustando o tamanho para ficar proporcional
+              className="h-24 w-auto object-contain hover:opacity-95 transition-opacity"
             />
           </div>
 
-          {/* Menu Desktop (Escondido no Mobile) */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Menu Desktop */}
+          <nav className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-brand-orange transition-colors duration-200 font-medium text-sm uppercase tracking-wide"
+                className="text-gray-200 hover:text-brand-orange transition-colors duration-200 font-bold text-lg uppercase tracking-wider relative group py-2"
               >
                 {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
 
-            {/* Botão de Destaque no Menu */}
             <a
               href="#contato"
-              className="bg-brand-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-bold transition-all flex items-center gap-2"
+              className="bg-gradient-to-r from-brand-orange to-orange-700 hover:from-orange-600 hover:to-orange-800 text-white px-8 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(255,136,0,0.5)] hover:shadow-[0_0_30px_rgba(255,136,0,0.9)] transition-all transform hover:-translate-y-1 flex items-center gap-2 text-lg"
             >
-              <Phone size={18} />
+              <Phone size={22} />
               Orçamento
             </a>
           </nav>
 
-          {/* Botão Menu Mobile (Hambúrguer) */}
+          {/* Botão Menu Mobile */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-300 hover:text-white focus:outline-none"
+              className="text-white hover:text-brand-orange transition-colors focus:outline-none"
             >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMenuOpen ? <X size={40} /> : <Menu size={40} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Menu Mobile (Abre quando clica no hambúrguer) */}
+      {/* A LINHA NEON ESTILO FORTEMP */}
+      <div className="relative w-full">
+        <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 blur-xl opacity-80 z-0"></div>
+        <div className="h-[4px] w-full bg-gradient-to-r from-brand-blue via-cyan-400 to-brand-orange relative z-10"></div>
+      </div>
+
+      {/* Menu Mobile */}
       {isMenuOpen && (
-        <div className="md:hidden bg-brand-dark border-t border-gray-800 absolute w-full">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+        <div className="md:hidden bg-[#020617] border-t border-gray-800 absolute w-full shadow-2xl z-40">
+          <div className="px-4 pt-4 pb-6 space-y-2 flex flex-col items-center">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsMenuOpen(false)} // Fecha o menu ao clicar
-                className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-brand-orange hover:bg-gray-800 rounded-md w-full text-center"
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-3 py-4 text-xl font-medium text-gray-200 hover:text-brand-orange w-full text-center hover:bg-white/5 rounded-lg transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contato"
-              onClick={() => setIsMenuOpen(false)}
-              className="mt-4 w-full bg-brand-orange text-white text-center py-3 rounded-md font-bold"
-            >
-              Solicitar Orçamento
-            </a>
           </div>
         </div>
       )}
