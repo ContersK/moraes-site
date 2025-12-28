@@ -12,32 +12,33 @@ export function Header() {
   ];
 
   return (
-    /* Fundo azul escuro e elegante (#020617) */
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#020617] shadow-2xl transition-all duration-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Altura de 128px (h-32) - Tamanho grande e imponente */}
+    <header className="fixed md:relative top-0 left-0 w-full z-50 bg-[#020617] shadow-2xl transition-all duration-300">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex items-center justify-between h-32">
           {/* Logo Container */}
-          <div className="flex-shrink-0 flex items-center h-full py-4">
+          <div className="flex-shrink-0 flex items-center h-full py-2">
             <img
-              // ATENÇÃO: Usando o arquivo .png agora
               src="/img/moraes_logo_trans2.png"
               alt="Moraes Climatização"
-              // Sem máscaras, apenas ajustando o tamanho para ficar proporcional
-              className="h-24 w-auto object-contain hover:opacity-95 transition-opacity"
+              // MUDANÇA 1: Aumentei para h-28 (112px).
+              // Isso vai fazer a logo crescer e ocupar mais espaço horizontalmente.
+              className="h-60 w-auto object-contain hover:opacity-95 transition-opacity"
             />
           </div>
 
           {/* Menu Desktop */}
-          <nav className="hidden md:flex items-center space-x-10">
+          {/* MUDANÇA 2: space-x-16 para dar mais espaço entre os links */}
+          <nav className="hidden md:flex items-center space-x-16">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-200 hover:text-brand-orange transition-colors duration-200 font-bold text-lg uppercase tracking-wider relative group py-2"
+                // MUDANÇA 3: text-xl (fonte maior)
+                className="text-gray-200 hover:text-brand-orange transition-colors duration-200 font-bold text-xl uppercase tracking-wider relative group py-2"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
+                {/* MUDANÇA 4: h-1 (linha mais grossa no hover) */}
+                <span className="absolute bottom-0 left-0 w-0 h-1 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
 
@@ -62,7 +63,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* A LINHA NEON ESTILO FORTEMP */}
+      {/* LINHA NEON */}
       <div className="relative w-full">
         <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-orange-500 blur-xl opacity-80 z-0"></div>
         <div className="h-[4px] w-full bg-gradient-to-r from-brand-blue via-cyan-400 to-brand-orange relative z-10"></div>

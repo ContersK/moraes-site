@@ -11,8 +11,8 @@ export function About() {
 
   return (
     <section id="sobre" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
           {/* Lado da Imagem */}
           <div className="w-full md:w-1/2">
             <div className="relative">
@@ -20,7 +20,7 @@ export function About() {
               <div className="absolute -top-4 -left-4 w-full h-full border-4 border-brand-orange rounded-xl"></div>
 
               <img
-                src="https://images.unsplash.com/photo-1581094794329-cd56b5095a8e?q=80&w=2068&auto=format&fit=crop"
+                src="./public/img/ar-condicionado-tecnico.jpg"
                 alt="Técnico realizando manutenção"
                 className="relative z-10 rounded-xl shadow-2xl w-full object-cover h-[400px]"
               />
