@@ -20,7 +20,7 @@ export function About() {
               <div className="absolute -top-4 -left-4 w-full h-full border-4 border-brand-orange rounded-xl"></div>
 
               <img
-                src="./public/img/ar-condicionado-tecnico.jpg"
+                src="/img/ar-condicionado-tecnico.jpg"
                 alt="Técnico realizando manutenção"
                 className="relative z-10 rounded-xl shadow-2xl w-full object-cover h-[400px]"
               />
