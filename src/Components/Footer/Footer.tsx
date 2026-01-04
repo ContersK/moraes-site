@@ -65,7 +65,9 @@ export function Footer() {
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/moraes.eletroclimatizacao/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#1a202c] p-3 rounded-lg hover:bg-[#E1306C] hover:text-white transition-all border border-gray-800"
               >
                 <Instagram size={20} />

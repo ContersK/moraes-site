@@ -129,7 +129,9 @@ export function Contact() {
               </h4>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/moraes.eletroclimatizacao/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-brand-blue text-white p-4 rounded-full hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-md"
                 >
                   <Instagram size={28} />
