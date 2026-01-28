@@ -2,61 +2,44 @@ import { useState, type FormEvent } from "react";
 import { Phone, Mail, MapPin, Instagram, Facebook, Send } from "lucide-react";
 
 export function Contact() {
-  // 1. Estados para guardar os dados do formulário
+  // Estados para guardar os dados do formulário
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
     service: "",
     message: "",
   });
 
-  // 2. Função para atualizar os dados enquanto digita
+  // Função para atualizar os dados enquanto digita
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { id, value } = e.target;
-
-    // Máscara simples para telefone (opcional, mas fica chique)
-    if (id === "phone") {
-      const phoneMask = value
-        .replace(/\D/g, "") // Remove tudo que não é número
-        .replace(/^(\d{2})(\d)/g, "($1) $2") // Coloca parênteses no DDD
-        .replace(/(\d)(\d{4})$/, "$1-$2"); // Coloca o traço
-
-      setFormData((prev) => ({ ...prev, [id]: phoneMask }));
-    } else {
-      setFormData((prev) => ({ ...prev, [id]: value }));
-    }
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // 3. Função que envia para o WhatsApp
+  // Função que envia para o WhatsApp
   const handleSendMessage = (e: FormEvent) => {
-    e.preventDefault(); // Impede a página de recarregar
+    e.preventDefault();
 
-    // Validação básica
-    if (!formData.name || !formData.phone) {
-      alert("Por favor, preencha pelo menos seu Nome e Telefone.");
+    if (!formData.name) {
+      alert("Por favor, preencha seu nome.");
       return;
     }
 
-    // Número do WhatsApp da empresa (Coloque o número REAL aqui, apenas números, com 55 na frente)
     const companyPhone = "5518996179881";
 
-    // Monta a mensagem formatada
     const text = `
 *Olá! Vim através do site e gostaria de um orçamento.*
 --------------------------------
 *Nome:* ${formData.name}
-*Telefone:* ${formData.phone}
 *Serviço:* ${formData.service || "Não especificado"}
 *Mensagem:* ${formData.message || "Sem mensagem adicional"}
     `.trim();
 
-    // Cria o link e abre em nova aba
     const whatsappUrl = `https://wa.me/${companyPhone}?text=${encodeURIComponent(
-      text
+      text,
     )}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -167,56 +150,36 @@ export function Contact() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-bold text-gray-700 mb-2"
-                  >
-                    Telefone / WhatsApp *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-brand-blue focus:ring-0 outline-none transition-all bg-gray-50 focus:bg-white"
-                    placeholder="(18) 99999-9999"
-                    maxLength={15}
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="service"
-                    className="block text-sm font-bold text-gray-700 mb-2"
-                  >
-                    Serviço de Interesse
-                  </label>
-                  <select
-                    id="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-brand-blue focus:ring-0 outline-none transition-all bg-gray-50 focus:bg-white appearance-none"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                      backgroundPosition: `right 1rem center`,
-                      backgroundRepeat: `no-repeat`,
-                      backgroundSize: `1.5em 1.5em`,
-                    }}
-                  >
-                    <option value="">Selecione...</option>
-                    <option value="Instalação de Ar">
-                      Instalação de Ar Condicionado
-                    </option>
-                    <option value="Manutenção/Limpeza">
-                      Manutenção / Limpeza
-                    </option>
-                    <option value="Elétrica">Serviços Elétricos</option>
-                    <option value="Infraestrutura">Infraestrutura</option>
-                    <option value="Outros">Outros</option>
-                  </select>
-                </div>
+              <div>
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-bold text-gray-700 mb-2"
+                >
+                  Serviço de Interesse
+                </label>
+                <select
+                  id="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-brand-blue focus:ring-0 outline-none transition-all bg-gray-50 focus:bg-white appearance-none"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                    backgroundPosition: `right 1rem center`,
+                    backgroundRepeat: `no-repeat`,
+                    backgroundSize: `1.5em 1.5em`,
+                  }}
+                >
+                  <option value="">Selecione...</option>
+                  <option value="Instalação de Ar">
+                    Instalação de Ar Condicionado
+                  </option>
+                  <option value="Manutenção/Limpeza">
+                    Manutenção / Limpeza
+                  </option>
+                  <option value="Elétrica">Serviços Elétricos</option>
+                  <option value="Infraestrutura">Infraestrutura</option>
+                  <option value="Outros">Outros</option>
+                </select>
               </div>
 
               <div>

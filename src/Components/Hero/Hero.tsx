@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative h-screen min-h-[600px] flex items-center justify-center"
+      className="relative h-[70vh] min-h-[500px] md:min-h-[550px] flex items-center justify-center"
     >
       <div className="absolute inset-0 z-0">
         <img

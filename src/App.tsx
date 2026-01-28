@@ -1,5 +1,6 @@
 import { Header } from "./Components/Header/Header";
 import { Hero } from "./Components/Hero/Hero";
+import { QuickContact } from "./Components/QuickContact/QuickContact";
 import { Services } from "./Components/Card/Services";
 import { About } from "./Components/About/About";
 import { Contact } from "./Components/Contact/Contact";
@@ -14,6 +15,7 @@ function App() {
       {/* padding-top de 32 (128px) para compensar o header */}
       <main className="flex-grow pt-32 md:pt-0 bg-gray-50">
         <Hero />
+        <QuickContact />
         <Services />
         <About />
         <Contact />
