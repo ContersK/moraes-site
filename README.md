@@ -127,7 +127,7 @@ npm install
 npm start
 ```
 
-O site estará disponível em `http://localhost:5173`
+O site estará disponível em https://moraeseletroclimatizacao.com.br/
 
 ---
 
