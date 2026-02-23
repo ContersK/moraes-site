@@ -28,6 +28,12 @@ export function Footer() {
             <a
               href="https://wa.me/5518996179881"
               target="_blank"
+              onClick={(e) => {
+                if (typeof gtag_report_conversion === "function") {
+                  e.preventDefault();
+                  gtag_report_conversion("https://wa.me/5518996179881");
+                }
+              }}
               className="bg-white text-brand-orange hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition-all shadow-lg transform hover:-translate-y-1 flex items-center gap-2"
             >
               <Phone size={20} />

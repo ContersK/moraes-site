@@ -23,6 +23,12 @@ export function Contact() {
   const handleSendMessage = (e: FormEvent) => {
     e.preventDefault();
 
+    if (typeof gtag === "function") {
+      gtag("event", "conversion", {
+        send_to: "AW-17790194707/auTACLCYgf0bEJOog6NC",
+      });
+    }
+
     if (!formData.name) {
       alert("Por favor, preencha seu nome.");
       return;

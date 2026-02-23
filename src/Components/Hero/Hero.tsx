@@ -45,6 +45,12 @@ export function Hero() {
           <a
             href="https://wa.me/5518996179881"
             target="_blank"
+            onClick={(e) => {
+              if (typeof gtag_report_conversion === "function") {
+                e.preventDefault();
+                gtag_report_conversion("https://wa.me/5518996179881");
+              }
+            }}
             className="flex items-center justify-center gap-3 bg-brand-orange hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:-translate-y-1 shadow-xl hover:shadow-orange-500/30"
           >
             {/* Aqui está o ícone novo */}
