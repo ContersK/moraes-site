@@ -34,7 +34,7 @@ export function Contact() {
       return;
     }
 
-    const companyPhone = "5518996179881";
+    const companyPhone = "5518997010961";
 
     const text = `
 *Olá! Vim através do site e gostaria de um orçamento.*
@@ -78,7 +78,7 @@ export function Contact() {
                 <h4 className="font-bold text-xl text-gray-800 mb-1">
                   Telefone / WhatsApp
                 </h4>
-                <p className="text-gray-600 text-lg">(18)996179881</p>
+                <p className="text-gray-600 text-lg">(18) 99701-0961</p>
                 <p className="text-sm text-gray-500 mt-1">
                   Atendimento seg. a sex. das 8h às 18h
                 </p>

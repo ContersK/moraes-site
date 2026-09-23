@@ -31,7 +31,7 @@ export function QuickContact() {
       return;
     }
 
-    const companyPhone = "5518996179881";
+    const companyPhone = "5518997010961";
 
     const text = `
 *Olá! Vim através do site e gostaria de um orçamento.*

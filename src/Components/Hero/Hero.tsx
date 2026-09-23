@@ -43,12 +43,12 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
           <a
-            href="https://wa.me/5518996179881"
+            href="https://wa.me/5518997010961"
             target="_blank"
             onClick={(e) => {
               if (typeof gtag_report_conversion === "function") {
                 e.preventDefault();
-                gtag_report_conversion("https://wa.me/5518996179881");
+                gtag_report_conversion("https://wa.me/5518997010961");
               }
             }}
             className="flex items-center justify-center gap-3 bg-brand-orange hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:-translate-y-1 shadow-xl hover:shadow-orange-500/30"

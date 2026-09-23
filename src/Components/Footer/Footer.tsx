@@ -26,12 +26,12 @@ export function Footer() {
               </p>
             </div>
             <a
-              href="https://wa.me/5518996179881"
+              href="https://wa.me/5518997010961"
               target="_blank"
               onClick={(e) => {
                 if (typeof gtag_report_conversion === "function") {
                   e.preventDefault();
-                  gtag_report_conversion("https://wa.me/5518996179881");
+                  gtag_report_conversion("https://wa.me/5518997010961");
                 }
               }}
               className="bg-white text-brand-orange hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition-all shadow-lg transform hover:-translate-y-1 flex items-center gap-2"
@@ -169,10 +169,10 @@ export function Footer() {
                 <div>
                   <h5 className="text-white font-bold">Telefones</h5>
                   <a
-                    href="https://wa.me/5518996179881"
+                    href="https://wa.me/5518997010961"
                     className="block text-lg hover:text-brand-blue transition-colors"
                   >
-                    (18) 99617-9881
+                    (18) 99701-0961
                   </a>
                 </div>
               </div>

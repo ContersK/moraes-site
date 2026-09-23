@@ -176,7 +176,7 @@ Os arquivos otimizados serão gerados na pasta `dist/`.
 
 | Canal          | Informação                                                                         |
 | -------------- | ---------------------------------------------------------------------------------- |
-| 📱 WhatsApp    | [(18) 99617-9881](https://wa.me/5518996179881)                                     |
+| 📱 WhatsApp    | [(18) 99701-0961](https://wa.me/5518997010961)                                     |
 | 📷 Instagram   | [@moraes.eletroclimatizacao](https://www.instagram.com/moraes.eletroclimatizacao/) |
 | 📍 Localização | Birigui - SP                                                                       |
 
